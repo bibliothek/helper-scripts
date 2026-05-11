@@ -8,7 +8,7 @@ param (
     [switch]
     $UseBranch,
 
-    [Parameter(ParameterSetName = 'UseCommit', Mandatory = $true)]
+    [Parameter(ParameterSetName = 'UseCommit', Mandatory = $false)]
     [string]
     $Hash,
 
@@ -27,6 +27,9 @@ if($UseBranch) {
     $PrNumber = (gh pr view $BranchName --json number --jq .number)   
 } else {
     $BranchName = (gh pr view $PrNumber --json headRefName --jq .headRefName)
+    if(!$Hash){
+        $Hash = (gh pr view $PrNumber --json commits --jq .commits[0].oid)
+    }
 }
 
 $currentCommitMessage = (git log $Hash^..$Hash --pretty=%B)
