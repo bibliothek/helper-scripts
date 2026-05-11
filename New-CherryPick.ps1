@@ -14,14 +14,10 @@ param (
 
     [Parameter(ParameterSetName = 'UseCommit', Mandatory = $true)]
     [string]
-    $BranchName,
-    
-    [Parameter(ParameterSetName = 'UseCommit', Mandatory = $true)]
-    [string]
     $PrNumber
 )
 
-if(!$UseBranch -and !$BranchName) {
+if(!$UseBranch -and !$PrNumber) {
     throw "Specify branch name or use switch '-UseBranch'"
 }
 
@@ -29,6 +25,8 @@ if($UseBranch) {
     $Hash = (git rev-parse HEAD)
     $BranchName = (git rev-parse --abbrev-ref HEAD)
     $PrNumber = (gh pr view $BranchName --json number --jq .number)   
+} else {
+    $BranchName = (gh pr view $PrNumber --json headRefName --jq .headRefName)
 }
 
 $currentCommitMessage = (git log $Hash^..$Hash --pretty=%B)
