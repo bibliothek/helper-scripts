@@ -92,7 +92,7 @@ create_file() {
     _year=$(date_at "$_date" 0 '%Y')
     _month=$(date_at "$_date" 0 '%m')
     _month=${_month#0}
-    _folder="$root_path/$_year/$_month"
+    _folder="$root_path/0_$_year/0_$_month"
 
     [ -d "$_folder" ] || mkdir -p "$_folder"
 
