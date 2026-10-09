@@ -6,7 +6,7 @@ usage() {
     cat <<'USAGE'
 Cherry-pick a commit onto <target-branch> on a new cp/ branch and open a PR for it.
 
-Usage: _new_cherry_pick.sh <target-branch> (-b | -p <pr-number> [-c <hash>])
+Usage: _new-cherry-pick.sh <target-branch> (-b | -p <pr-number> [-c <hash>])
 
   -b, --use-branch      cherry-pick HEAD of the current branch, resolving its PR number
   -p, --pr <number>     cherry-pick from this PR (its first commit unless -c is given)

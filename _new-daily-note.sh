@@ -6,7 +6,7 @@ usage() {
     cat <<'USAGE'
 Create daily-note files under <root>/<year>/<month>/0_YYYY-MM-DD-<Wochentag>.md
 
-Usage: _new_daily_note.sh [options]
+Usage: _new-daily-note.sh [options]
 
   (no options)             create today's note
   -y, --year <yyyy>        create notes for that whole year (Jan 1 - Dec 31)

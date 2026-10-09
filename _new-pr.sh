@@ -6,7 +6,7 @@ usage() {
     cat <<'USAGE'
 Create a GitHub PR for the current branch and copy "👀 <title> <url>" to the clipboard.
 
-Usage: _new_pr.sh [-a|--add-and-commit] <commit-message>
+Usage: _new-pr.sh [-a|--add-and-commit] <commit-message>
   -a, --add-and-commit  stage everything and commit with <commit-message> first
 USAGE
 }

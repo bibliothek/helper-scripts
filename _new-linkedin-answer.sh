@@ -6,8 +6,8 @@ usage() {
     cat <<'USAGE'
 Copy a polite "not looking for something new" LinkedIn reply to the clipboard.
 
-Usage: _new_linkedin_answer.sh <name> [DE|EN]
-       _new_linkedin_answer.sh <name> [-l|--language DE|EN]
+Usage: _new-linkedin-answer.sh <name> [DE|EN]
+       _new-linkedin-answer.sh <name> [-l|--language DE|EN]
 
 Language defaults to DE.
 USAGE
