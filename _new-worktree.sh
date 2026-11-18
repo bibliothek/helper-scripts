@@ -34,8 +34,6 @@ git -C "$root" worktree add -b "$branch" "$dir" ${2:+"$2"} >&2
 
 if [ -n "${TMUX-}" ]; then
     win=$(tmux new-window -P -F '#{window_id}' -c "$dir")
-    tmux split-window -h -t "$win" -c "$dir"
-    tmux select-pane -t "$win" -L
 fi
 
 echo "$dir"
